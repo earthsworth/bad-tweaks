@@ -82,7 +82,7 @@ impl eframe::App for InjectorApp {
 fn find_minecraft_process() -> Option<u32> {
     for p in tasklist::Tasklist::new().unwrap() {
         let pname = p.get_pname();
-        if pname != "javaw.exe" {
+        if pname != "javaw.exe" && pname != "java.exe" {
             continue;
         }
 
